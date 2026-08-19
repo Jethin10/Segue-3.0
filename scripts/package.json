@@ -1,0 +1,7 @@
+{
+  "name": "@pramaan/scripts",
+  "private": true,
+  "type": "module",
+  "scripts": { "seed": "node seed-demo.mjs", "reset": "node seed-demo.mjs --reset" },
+  "dependencies": { "firebase-admin": "^13.0.1" }
+}

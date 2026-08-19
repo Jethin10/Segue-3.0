@@ -1,0 +1,8 @@
+{
+  "indexes": [
+    { "collectionGroup": "work_orders", "queryScope": "COLLECTION", "fields": [{ "fieldPath": "workerId", "order": "ASCENDING" }, { "fieldPath": "createdAt", "order": "DESCENDING" }] },
+    { "collectionGroup": "work_orders", "queryScope": "COLLECTION", "fields": [{ "fieldPath": "citizenId", "order": "ASCENDING" }, { "fieldPath": "createdAt", "order": "DESCENDING" }] },
+    { "collectionGroup": "proofs", "queryScope": "COLLECTION", "fields": [{ "fieldPath": "workerId", "order": "ASCENDING" }, { "fieldPath": "serverTimestamp", "order": "ASCENDING" }] }
+  ],
+  "fieldOverrides": []
+}

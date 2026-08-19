@@ -1,0 +1,26 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() { return request.auth != null; }
+    function user() { return get(/databases/$(database)/documents/users/$(request.auth.uid)).data; }
+    function role(name) { return signedIn() && user().role == name; }
+    function immutableFields() { return request.resource.data.createdAt == resource.data.createdAt && request.resource.data.citizenId == resource.data.citizenId; }
+
+    match /users/{uid} {
+      allow read: if signedIn() && (request.auth.uid == uid || role('admin'));
+      allow create: if signedIn() && request.auth.uid == uid;
+      allow update: if signedIn() && request.auth.uid == uid && request.resource.data.role == resource.data.role;
+    }
+    match /work_orders/{id} {
+      allow create: if role('citizen') && request.resource.data.citizenId == request.auth.uid && request.resource.data.status == 'reported';
+      allow read: if role('admin') || (role('citizen') && resource.data.citizenId == request.auth.uid) || (role('worker') && resource.data.workerId == user().workerId);
+      allow update: if role('admin') && immutableFields();
+      // Worker proof-state transitions and citizen verdicts are Cloud Function-only.
+    }
+    match /proof_sessions/{id} { allow read: if role('admin') || (role('worker') && resource.data.workerId == user().workerId); allow write: if false; }
+    match /proofs/{id} { allow read: if role('admin') || (role('citizen') && resource.data.citizenId == request.auth.uid) || (role('worker') && resource.data.workerId == user().workerId); allow write: if false; }
+    match /citizen_verdicts/{id} { allow read: if role('admin') || (role('citizen') && resource.data.citizenId == request.auth.uid); allow write: if false; }
+    match /verification_attempts/{id} { allow read: if role('admin') || (role('worker') && resource.data.workerId == user().workerId); allow write: if false; }
+    match /investigations/{id} { allow read: if role('admin'); allow write: if false; }
+  }
+}

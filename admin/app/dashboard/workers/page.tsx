@@ -1,0 +1,3 @@
+import { ShieldCheck, UserRound } from "lucide-react";
+import { AdminShell } from "@/components/admin-shell";
+export default function WorkersPage(){return <AdminShell><div className="admin-content"><header className="page-heading"><div><span>Workforce</span><h1>Workers</h1><p>Verified field identities and active service assignments.</p></div></header><section className="workers-list">{[["Worker 019","Ramesh Yadav",8,2],["Worker 012","Suresh Kumar",11,1],["Worker 027","Amit Singh",7,0]].map(([id,name,ward,tasks])=><div key={String(id)}><span><UserRound /></span><div><strong>{name}</strong><small>{id} · Ward {ward}</small></div><em>{tasks} active</em><ShieldCheck /></div>)}</section></div></AdminShell>}
