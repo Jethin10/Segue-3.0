@@ -7,13 +7,13 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>PRAMAAN</string>
+	<string>SATYAK</string>
 	<key>NSCameraUsageDescription</key>
-	<string>PRAMAAN uses the camera to capture fresh civic issue, identity, and before/after work evidence.</string>
+	<string>SATYAK uses the camera to capture fresh civic issue, identity, and before/after work evidence.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>PRAMAAN uses precise location to create and verify the civic work-site geofence.</string>
+	<string>SATYAK uses precise location to create and verify the civic work-site geofence.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>PRAMAAN may access a captured photo only while preparing evidence for upload.</string>
+	<string>SATYAK may access a captured photo only while preparing evidence for upload.</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>

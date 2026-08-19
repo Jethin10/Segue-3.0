@@ -1,26 +1,18 @@
-# PRAMAAN mobile
+# SATYAK mobile demo
 
-Flutter application for the citizen and field-worker PRAMAAN experiences.
+Flutter application for the SATYAK citizen and field-worker demo. The default
+release is fully seeded and runs without Firebase, sign-in, internet, camera or
+location permissions.
 
 ## Run
 
 ```bash
 flutter pub get
-flutter run \
-  --dart-define=FIREBASE_API_KEY=... \
-  --dart-define=FIREBASE_APP_ID=... \
-  --dart-define=FIREBASE_MESSAGING_SENDER_ID=... \
-  --dart-define=FIREBASE_PROJECT_ID=... \
-  --dart-define=FIREBASE_STORAGE_BUCKET=...
+flutter run
 ```
 
-For a normal Firebase-native configuration, install FlutterFire CLI and run:
-
-```bash
-flutterfire configure
-```
-
-The app shows a recoverable configuration screen instead of crashing when Firebase settings are absent.
+Choose **Citizen demo** or **Field worker demo** on the first screen. All
+actions remain on the device and reset when the app process is restarted.
 
 ## Verify
 

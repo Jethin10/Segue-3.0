@@ -60,7 +60,7 @@ class BrandLockup extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
         children: [
-          Text('PRAMAAN  प्रमाण',
+          Text('SATYAK  सत्यक',
               style: TextStyle(
                   color: dark ? Colors.white : ink,
                   fontSize: 22,
