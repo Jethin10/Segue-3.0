@@ -1,0 +1,16 @@
+node_modules/
+.next/
+out/
+.env*
+!.env.example
+coverage/
+.dart_tool/
+mobile/build/
+mobile/.flutter-plugins*
+functions/lib/
+firebase-debug.log
+.firebase/
+.rivet/
+.playwright-cli/
+**/.idea/
+**/*.iml
