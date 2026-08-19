@@ -1,0 +1,12 @@
+{
+  "name": "pramaan",
+  "private": true,
+  "scripts": {
+    "dev": "pnpm --dir admin dev",
+    "build": "pnpm --dir admin build",
+    "lint": "pnpm --dir admin lint",
+    "typecheck": "pnpm --dir admin typecheck",
+    "seed": "pnpm --dir scripts seed"
+  },
+  "engines": { "node": ">=20" }
+}

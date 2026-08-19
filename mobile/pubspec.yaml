@@ -1,0 +1,23 @@
+name: pramaan_mobile
+description: Citizen and field-worker PRAMAAN client.
+publish_to: none
+version: 0.1.0+1
+environment:
+  sdk: ">=3.4.0 <4.0.0"
+dependencies:
+  flutter:
+    sdk: flutter
+  cloud_firestore: ^6.8.0
+  firebase_auth: ^6.5.7
+  firebase_core: ^4.13.0
+  firebase_storage: ^13.4.6
+  cloud_functions: ^6.3.6
+  cupertino_icons: ^1.0.8
+  geolocator: ^14.0.3
+  image_picker: ^1.1.2
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+flutter:
+  uses-material-design: true

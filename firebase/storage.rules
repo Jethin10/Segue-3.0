@@ -1,0 +1,9 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    function signedIn() { return request.auth != null; }
+    function smallImage() { return request.resource.size < 10 * 1024 * 1024 && request.resource.contentType.matches('image/.*'); }
+    match /citizen-reports/{uid}/{file} { allow read: if signedIn(); allow create: if signedIn() && request.auth.uid == uid && smallImage(); allow update, delete: if false; }
+    match /proof-evidence/{workOrderId}/{uid}/{file} { allow read: if signedIn(); allow create: if signedIn() && request.auth.uid == uid && smallImage(); allow update, delete: if false; }
+  }
+}
